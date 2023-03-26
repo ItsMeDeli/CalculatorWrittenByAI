@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Kalkulator</title>
+  </head>
+  <body>
+    <h1>Kalkulator</h1>
+    <form>
+      <label for="liczba1">Liczba 1:</label>
+      <input type="number" id="liczba1" name="liczba1" required><br><br>
+      <label for="liczba2">Liczba 2:</label>
+      <input type="number" id="liczba2" name="liczba2" required><br><br>
+      <label for="operator">Wybierz operator:</label>
+      <select id="operator" name="operator">
+        <option value="+">Dodawanie</option>
+        <option value="-">Odejmowanie</option>
+        <option value="*">Mnożenie</option>
+        <option value="/">Dzielenie</option>
+      </select><br><br>
+      <input type="button" value="Oblicz" onclick="calculate()"><br><br>
+      <label for="wynik">Wynik:</label>
+      <input type="text" id="wynik" name="wynik" readonly><br><br>
+    </form>
+    <script>
+      function calculate() {
+        var liczba1 = parseFloat(document.getElementById("liczba1").value);
+        var liczba2 = parseFloat(document.getElementById("liczba2").value);
+        var operator = document.getElementById("operator").value;
+        var wynik;
+        switch (operator) {
+          case "+":
+            wynik = liczba1 + liczba2;
+            break;
+          case "-":
+            wynik = liczba1 - liczba2;
+            break;
+          case "*":
+            wynik = liczba1 * liczba2;
+            break;
+          case "/":
+            wynik = liczba1 / liczba2;
+            break;
+        }
+        document.getElementById("wynik").value = wynik;
+      }
+    </script>
+  </body>
+</html>
